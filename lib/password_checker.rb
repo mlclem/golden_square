@@ -1,4 +1,3 @@
-=begin
 class PasswordChecker
   def check(password)
     if password.length >= 8
@@ -8,4 +7,3 @@ class PasswordChecker
     end
   end
 end
-=end
