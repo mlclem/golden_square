@@ -47,7 +47,7 @@ class DiaryEntry
     @wpm = wpm
     @minutes = minutes
 
-    total = (@wpm.to_i * @minutes.to_i)
+    total = (@wpm * @minutes)
 
     max_index = (total - 1)
 
