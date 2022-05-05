@@ -41,6 +41,8 @@ focus on the details you see as important, not everything. The diagram below
 uses asciiflow.com but you could also use excalidraw.com, draw.io, or miro.com_
 
 ```
+# see "multiclass_design_diagram.md #
+
 ```
 
 _Also design the interface of each class in more detail._
@@ -66,11 +68,13 @@ class Diary
     @diary_hash = {}}
     Todo.new
     PhoneBook.new
+    Experiences.new
   end
 
   # Pushes experience into diary array
   def add_entry(experience)
     @diary_array.push(experience)
+    contact_search(experience)
   end
 
   # Report diary entries
@@ -118,6 +122,8 @@ class Contacts
   # Method to search diary entry for contacts
   def contact_search
     # string search method possibly .include? or .scan
+    # called during Diary.add_entry method
+    # 
   end
 end
 
@@ -143,26 +149,32 @@ combinations that reflect the ways in which the system will be used._
 # EXAMPLE
 
 # Creating a new experiences instance, add experiences as diary entries then report all entries
-exp = Experiences.new
+new_diary = Diary.new
 exp.add_experience("I went to the shops")
 exp.add_experience("I went to the beach")
-new_diary = Diary.new
 new_diary.add_entry(exp)
 new_diary.report_entries
 
 # Use WPM / reading chunk to return diary entries that can be read in calculated time
-exp = Experiences.new
+new_diary = Diary.new
 exp.add_experience("I went to the shops")
 exp.add_experience("I went to the beach")
 exp.add_experience("Really really long long entry blah blah blah")
-new_diary = Diary.new
 new_diary.add_entry(exp)
 new_diary.reading_time_select(5,2)
 
 # Todo list
 new_diary = Diary.new
 Todo.add_todo("Buy milk")
+Todo.add_todo("get dog")
+Todo.report_todo
 
+# Report phone numbers
+new_diary = Diary.new
+exp.add_experience("I went to the shops")
+new_diary.add_entry(exp) # Contact search method is called in here
+new_diary.add_entry(exp) # Contact search method is called in here
+report_phone
 
 ```
 
@@ -174,9 +186,9 @@ a more granular level of detail._
 ```ruby
 # EXAMPLE
 
-# Constructs a track
-track = Track.new("Carte Blanche", "Veracocha")
-track.title # => "Carte Blanche"
+# Creates a new instance of diary
+
+# Creates a new instance of diary
 ```
 
 _Encode each example as a test. You can add to the above list as you go._
