@@ -12,7 +12,7 @@ As a user
 So that I can focus on tasks to complete
 I want to mark tasks as complete and have them disappear from the list.
 
-# Todo class - update status method & report_completed method #
+# Todo class - update status method #
 
 ## 2. Design the Class Interface
 
@@ -36,13 +36,9 @@ class Todo
 
   def change_status(todo, status) 
     # Updates todo status in hash
-    # Uses select to push todo completed into a array
     # Deletes key value pair from hash
   end
 
-  def report_completed
-    # reports all completed tasks
-  end
 end
 ```
 
