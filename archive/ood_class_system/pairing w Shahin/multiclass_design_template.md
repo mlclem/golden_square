@@ -41,7 +41,8 @@ focus on the details you see as important, not everything. The diagram below
 uses asciiflow.com but you could also use excalidraw.com, draw.io, or miro.com_
 
 ```
-# see "multiclass_design_diagram.md #
+
+See file "multiclass_design_diagram.md 
 
 ```
 
@@ -65,7 +66,7 @@ class Diary
   # Initializes with new blank diary array
   def initialize
     # Diary has contains diary entry key and date value
-    @diary_hash = {}}
+    @diary_hash = {}
     Todo.new
     PhoneBook.new
     Experiences.new
@@ -165,13 +166,13 @@ new_diary.reading_time_select(5,2)
 
 # Todo list
 new_diary = Diary.new
-Todo.add_todo("Buy milk")
+Todo.add_todo("Buy milk") # If the new Todo instance is created as part of Diary Initialize, should the syntax be new_diary.add_todo("Buy milk")
 Todo.add_todo("get dog")
 Todo.report_todo
 
 # Report phone numbers
 new_diary = Diary.new
-exp.add_experience("I went to the shops")
+exp.add_experience("I went to the shops and met a person who gave me there number 07465312486")
 new_diary.add_entry(exp) # Contact search method is called in here
 new_diary.add_entry(exp) # Contact search method is called in here
 report_phone
@@ -186,9 +187,35 @@ a more granular level of detail._
 ```ruby
 # EXAMPLE
 
-# Creates a new instance of diary
 
-# Creates a new instance of diary
+# Creates a new instance of Diary, Experiences, Todo & Phonebook
+it "New diary instance intializes experiences, Todo & Phonebook" do
+  diary_22 = Diary.new
+  diary_22.add_experience("I won a prize")
+  diary_22.add_entry
+  diary_22.add_todo("Collect parcel")
+  # test phonebook method when contacts class sorted
+  diary_22.report_entries
+  diary_22.report_todo
+  
+  
+# WPM / reading chunk 
+
+new_diary = Diary.new
+exp.add_experience("I went to the shops")
+exp.add_experience("I went to the beach")
+exp.add_experience("Really really long long entry blah blah blah")
+new_diary.add_entry(exp)
+new_diary.reading_time_select(5,2)
+
+# Test phone book / contacts method
+
+new_diary = Diary.new
+exp.add_experience("I went to the shops and met a person who gave me there number 07465312486")
+new_diary.add_entry(exp) # Contact search method is called in here
+new_diary.add_entry(exp) # Contact search method is called in here
+report_phone
+
 ```
 
 _Encode each example as a test. You can add to the above list as you go._

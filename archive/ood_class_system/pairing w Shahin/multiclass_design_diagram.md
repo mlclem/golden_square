@@ -5,9 +5,9 @@
                                                     │Input experience as diary entry │
                                                     │                                │
                                                     │                                │
+                                                    │ Reports all diary entries      │
                                                     │                                │
-                                                    │                                │
-                                                    │                                │
+                                                    │ Reading chunk WPM method       │
                                                     │                                │
                                                     │                                │
                                                     │                                │
