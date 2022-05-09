@@ -18,20 +18,19 @@ _Include the initializer and public methods with all parameters and return value
 class TrackList
   
   def initialize
-    # Initialize with a blank hash to store track & artist key value pair
+    # Initialize with hash for track and artist, and an array to report
   end
 
-
   def add_track(track,artist)
-    # Add track and artist arguments to @track_hash    
+    # Add track and artist arguments to hash 
   end
 
   def remove_track(track)
-    # Remove track and artist from @track_hash
+    # Remove track and artist from hash
   end
 
   def report_tracks
-    # Return hash of tracks and artists
+    # Return an array of tracks and artists
   end
 
 end
