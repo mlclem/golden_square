@@ -32,7 +32,7 @@ class LetterCounter
 end
 
 counter = LetterCounter.new("IIII bb a 8")
-p counter.calculate_most_common
+counter.calculate_most_common
 
 # Intended output:
 # [2, "i"]
