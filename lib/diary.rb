@@ -11,13 +11,10 @@ class Diary
     return @diary_array
   end
 
-  def contents
-    return @diary_array.contents
-  end
-
   def find_best_entry(wpm,minutes)
     total_words = (wpm.to_f * minutes.to_f).round(0)
   
+    @diary_array.find {|entry| entry.contents.count(" ") + 1 == total_words}
 
   end
 end
