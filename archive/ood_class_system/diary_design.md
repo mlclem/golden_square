@@ -12,25 +12,25 @@ As a user
 So that I can reflect on my experiences
 I want to read my past diary entries
 
-# Diary class - method to add experiences, method to return diary entries
+# Diary class - method to add experiences, method to report diary entries
 
 As a user
 So that I can reflect on my experiences in my busy day
 I want to select diary entries to read based on how much time I have and my reading speed
 
-# Diary class - method to return entry based on WPM calculation
+# Diary class - method to return entry based on WPM * minutes calculation
 
 As a user
 So that I can keep track of my tasks
 I want to keep a todo list along with my diary
 
-# Task class & TodoList class, method to add Tasks to Todo list
+# Task class & TodoList class, method to add Tasks to Todo list, method to return incomplete tasks
 
 As a user
 So that I can keep track of my contacts
 I want to see a list of all of the mobile phone numbers in all my diary entries
 
-# Contants class & Phonebook class, method to get contacts & method to list phonebook
+# Contacts class & Phonebook class, method to get contacts & method to report phonebook
 
 ## 2. Design the Class System
 
@@ -40,7 +40,7 @@ uses asciiflow.com but you could also use excalidraw.com, draw.io, or miro.com_
 
 
   ┌──────────────────────────┐        ┌─────────────────┐
-  │   Experiences class      │        │ Contacts class  │
+  │   Experience class       │        │ Contact class   │
   │                │         │        │                 │
   │    initialize  │         │        │  initialize   │ │
   └────────────────┼─────────┘        └───────────────┼─┘
@@ -105,6 +105,7 @@ end
 
 class Task
   def initialize 
+  end
 end
 
 class TodoList
@@ -138,7 +139,7 @@ class PhoneBook
   end
 
   def report_phone_numbers
-    # Returns a list of all phone numbers
+    # Returns a list of all phone numbers / possibly contact names
   end
 end
 
@@ -158,7 +159,6 @@ cut_my_hair = Experience.new("Haircut","my head feels colder")
 empty_diary.add_entry(cut_my_hair)
 empty_diary.report_entries
 # => report entries should return an object for cut_my_hair diary entry
-
 
 # 2 Create multiple experience instances, add to diary, find best entry based on WPM method
 
@@ -180,7 +180,7 @@ new_journal.add_todo(spring_clean)
 new_journal.report_todos
 # => Should return spring_clean in todo list 
 
-# 4 Create new tasks, mark one task complete, report TodoList
+# 4 Create multiple tasks, mark one task complete, report TodoList
 
 diary_22 = Diary.new
 laundry = Task.new("Do the laundry")
