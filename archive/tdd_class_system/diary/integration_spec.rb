@@ -36,9 +36,11 @@ RSpec.describe "Integration tests" do
   it "Correctly calculates the best entry based on reading time" do
     diary = Diary.new
     short_entry = DiaryEntry.new("short","Just a few words")
+    med_entry = DiaryEntry.new("medium","More words " * 19 + "still")
     long_entry = DiaryEntry.new("long","Words" * 99 + "words")
     diary.add(short_entry)
+    diary.add(med_entry)
     diary.add(long_entry)
-    expect(diary.find_best_entry_for_reading_time(10, 10)).to eq long_entry
+    expect(diary.find_best_entry_for_reading_time(8, 10)).to eq med_entry
   end
 end

@@ -50,37 +50,31 @@ _Also design the interface of each class in more detail._
 
 ```ruby
 class Experiences
-  # Initializes with a blank experiences array
+  # Initializes with with title & experience
   def initialize
-    @experiences_array = []
   end
 
-  # Method to add new experiences to array
-  def add_experience(string)
-    @experiences_array.push(string)
+  # Returns all experiences
+  def return_experiences
   end
+
 
 end
 
 class Diary
   # Initializes with new blank diary array
   def initialize
-    # Diary has contains diary entry key and date value
-    @diary_hash = {}
-    Todo.new
-    PhoneBook.new
-    Experiences.new
+    # Initializes with hash
   end
 
   # Pushes experience into diary array
   def add_entry(experience)
-    @diary_array.push(experience)
-    contact_search(experience)
+
   end
 
   # Report diary entries
   def report_entries
-    return @diary_array
+    
   end
 
   # WPM / time available calculation & return relevant entries
@@ -95,9 +89,9 @@ class Diary
 end
 
 class Todo
-  # Initializes with a blank todo list array
+  # Initializes with todo list array
   def initialize
-    @todo_array = []
+    
   end
 
   # Method to add todo entries to todo list array
@@ -116,28 +110,25 @@ end
 
 class Contacts
   def initialize
-    @name = name
-    @phone_number = phone_number
+    # initiliaze with contact details
   end
 
   # Method to search diary entry for contacts
   def contact_search
     # string search method possibly .include? or .scan
-    # called during Diary.add_entry method
-    # 
+    # Maybe called during Diary.add_entry method
   end
 end
 
 class PhoneBook
-  # Initialize with hash to store contacts & phone numbers
+  # Initialize with hash 
   def intialize
-    @phone_book_hash = {:phone_number, :name}
+
   end
 
   # Method to return all phone numbers
   def report_phone
-    return @phone_book_hash
-    # return @phone_book_hash.key
+
   end
 ```
 
@@ -151,7 +142,8 @@ combinations that reflect the ways in which the system will be used._
 
 # Creating a new experiences instance, add experiences as diary entries then report all entries
 new_diary = Diary.new
-exp.add_experience("I went to the shops")
+shops = Experiences.new("I went to the shops")
+beach = Experiences.new("I went to the beach")
 exp.add_experience("I went to the beach")
 new_diary.add_entry(exp)
 new_diary.report_entries

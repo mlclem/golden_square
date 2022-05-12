@@ -42,11 +42,10 @@ class Diary
     # have available given their reading speed.
     total_reading_time = wpm * minutes
     
-    if best_entry.count_words <= total_reading_time
-      return best_entry
-    else
-      return nil
-    end
+    entries = @diary_array.select {|entry| entry.count_words <= total_reading_time} 
+    
+    
+
   end
 
 end

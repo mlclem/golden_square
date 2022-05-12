@@ -6,5 +6,6 @@ RSpec.describe Diary do
     expect(new_diary).to eq new_diary
   end
 
+  
 
 end
