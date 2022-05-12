@@ -39,14 +39,6 @@ RSpec.describe "Integration tests" do
     long_entry = DiaryEntry.new("long","Words" * 99 + "words")
     diary.add(short_entry)
     diary.add(long_entry)
-    expect(diary.find_best_entry_for_reading_time(30, 10))
-
-# => instance of diary entry closest to but not over the total reading time (e.g. 300 words in 10 minutes)
-
+    expect(diary.find_best_entry_for_reading_time(10, 10)).to eq long_entry
+  end
 end
-
-=begin
-
-
-
-=end

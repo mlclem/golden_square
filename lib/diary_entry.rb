@@ -3,6 +3,7 @@ class DiaryEntry
     if title.is_a?(String) && title.length > 0
       @title = title
       @chunk_counter = 0
+      @chunk_last_val = 0
     else
       fail "Title must be a string longer than 0"
     end
@@ -48,20 +49,15 @@ class DiaryEntry
     # If called again, `reading_chunk` should return the next chunk, skipping
     # what has already been read, until the contents is fully read.
     # The next call after that it should restart from the beginning.
-    chunk_total = (wpm * minutes)
-
-    index_end = (chunk_total - 1).to_i
-
-    @contents_array = @contents.split(" ")
-
-    if chunk_total < @contents_array.length
-      chunk = @contents_array[0..index_end].join(" ")
-      @contents_array.delete(chunk)
+    
+      @chunk_last_val = @chunk_counter
+      chunk_total = (wpm * minutes)
+      @chunk_counter += chunk_total
+      @contents_array = @contents.split(" ")
+      chunk = @contents_array[@chunk_last_val...@chunk_counter].join(" ")
+        if @chunk_counter >= count_words()
+          @chunk_counter = 0
+        end
       return chunk
-    else
-      chunk = @contents_array[0..-1].join(" ")
-      @contents_array.delete(chunk)
-      return chunk
-    end
   end
 end
