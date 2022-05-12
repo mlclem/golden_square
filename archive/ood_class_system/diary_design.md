@@ -6,7 +6,7 @@ As a user
 So that I can record my experiences
 I want to keep a regular diary
 
-# Experiences class & Diary class
+# Experience class & Diary class
 
 As a user
 So that I can reflect on my experiences
@@ -24,7 +24,7 @@ As a user
 So that I can keep track of my tasks
 I want to keep a todo list along with my diary
 
-# Tasks class & Todo list class, method to add Tasks to Todo list
+# Task class & TodoList class, method to add Tasks to Todo list
 
 As a user
 So that I can keep track of my contacts
