@@ -65,11 +65,7 @@ class Diary
 
   def report_phone_numbers
     # Returns a list of all phone numbers / possibly contact names
-    phone_string = @phone_book.each do |contact|
-        r1 = contact.report_name
-        r2 = contact.report_number
-      out_string = "Name #{r1} Number:#{r2}"
-    end
+
 
     return phone_string
   end
