@@ -50,10 +50,24 @@ RSpec.describe "Integration tests" do
   
   context "When tasks are added to the Todo List" do
     it "the report method returns all todos" do
-      new_journal = Diary.new
+      today_todo = TodoList.new
       spring_clean = Task.new("Hoover the house")
-      new_journal.add_todo(spring_clean)
-      new_journal.report_todos
+      today_todo.add_todo(spring_clean)
+      expect(today_todo.report_todos).to eq [spring_clean]
+    end
+  end
+
+  context "When multiple tasks are added and some are complete" do
+    it "The report method returns only incomplete todos" do
+      weeks_todos = TodoList.new
+      pay_bills = Task.new("Pay the bills")
+      laundry = Task.new("Do the laundry")
+      fort = Task.new("Dismantle pillow fort")
+      weeks_todos.add_todo(pay_bills)
+      weeks_todos.add_todo(laundry)
+      weeks_todos.add_todo(fort)
+      weeks_todos.mark_done(fort)
+      expect(weeks_todos.report_todos).to eq [pay_bills],[laundry]
     end
   end
 

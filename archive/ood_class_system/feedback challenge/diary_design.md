@@ -78,8 +78,6 @@ uses asciiflow.com but you could also use excalidraw.com, draw.io, or miro.com_
 
 _Also design the interface of each class in more detail._
 
-# Note - I think it's best to initialise instances of PhoneBook & TodoList in Diary
-
 ```ruby
 class Experience
   def initialize
@@ -174,21 +172,20 @@ journal.find_best_entry(30,2)
 
 # 3 Create new task, add task to TodoList, report TodoList
 
-new_journal = Diary.new
+today_todo = TodoList.new
 spring_clean = Task.new("Hoover the house")
-new_journal.add_todo(spring_clean)
-new_journal.report_todos
+today_todo.add_todo(spring_clean)
+today_todo.report_todos
 # => Should return spring_clean in todo list 
 
 # 4 Create multiple tasks, mark one task complete, report TodoList
 
-diary_22 = Diary.new
+weeks_todos = TodoList.new
 laundry = Task.new("Do the laundry")
 pay_bills = Task.new("Pay the bills")
-laundry = Task.new("Do the laundry")
 fort = task.new("Dismantle pillow fort")
-diary_22.mark_done(fort)
-diary_22.report_todos
+weeks_todos.mark_done(fort)
+weeks_todos.report_todos
 # => Should return laundry & pay_bills but not fort
 
 # 5 Create experience with phone number, add to diary, use phonebook class to create contact, then report phone number
