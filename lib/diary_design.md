@@ -190,11 +190,11 @@ weeks_todos.report_todos
 
 # 5 Create experience with phone number, add to diary, use phonebook class to create contact, then report phone number
 
-my_diary = Diary.new
+new_pb = PhoneBook.new
 met_person = Experience.new("I met a person called "bob" and their number is 07711 123 765")
-my_diary.add_entry(met_person)
-my_diary.get_contact
-my_diary.report_phone_numbers
+new_pb.add_entry(met_person)
+new_pb.get_contact
+new_pb.report_phone_numbers
 # => Should return phone number / contact details added in met_person
 
 ```
